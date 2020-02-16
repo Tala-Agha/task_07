@@ -5,15 +5,16 @@
         <title>List</title>
     </head>
     <body>
+      <a href="{% url 'restaurant-create' %}">Write!</a>
         {% for restaurant in restaurants %}
-            <a href="{% url 'restaurant-detail' restaurant.id %}">
+            <h1><a href="{% url 'restaurant-detail' restaurant.id %}">{{restaurant.name}}</a></h1>
                 <ul>
-                    <li>{{restaurant.name}}</li>
+
                     <li>{{restaurant.description}}</li>
                     <li>{{restaurant.opening_time}}</li>
                     <li>{{restaurant.closing_time}}</li>
                 </ul>
-            </a>
+                
         {% endfor %}
     </body>
 </html>
