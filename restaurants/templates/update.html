@@ -5,7 +5,7 @@
         <title>Update</title>
     </head>
     <body>
-      <form action="{% url 'restaurant-update' restaurant.id %}" method="post">
+      <form action="{% url 'restaurant-update' restaurant.id %}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="Submit"/>

@@ -34,7 +34,7 @@ def restaurant_update(request, restaurant_id):
     restaurant = Restaurant.objects.get(id = restaurant_id)
     form = RestaurantForm(instance=restaurant)
     if request.method == "POST":
-        form == RestaurantForm(request.POST, instance=restaurant)
+        form = RestaurantForm(request.POST, instance=restaurant)
         if form.is_valid():
             form.save()
             return redirect("restaurant-list")
@@ -42,7 +42,7 @@ def restaurant_update(request, restaurant_id):
     "form": form,
     "restaurant": restaurant
     }
-    return render(request, "udate.html", context)
+    return render(request, "update.html", context)
 
 def restaurant_delete(request, restaurant_id):
     restaurant = Restaurant.objects.get(id = restaurant_id)
